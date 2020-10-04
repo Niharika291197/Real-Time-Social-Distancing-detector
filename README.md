@@ -1,8 +1,6 @@
 # Social-Distance-Detection-using-OpenCV
 
-COVID-19 outbreak has created a lot of tension and misery to many families across the globe. During this pandemic, people are adviced to not be in close contact with others to reduce the spread of the disease. But there are still many humans who are negligent about this disease by not maintaining social distance. So, I developed this project to monitor if people are maintaining social distance or not. This can help the Government monitor areas where social distancing is not practiced and enforce stricter laws.
-
-Webcam is used to capture the video and detect people in real-time. If people are very close to each other, a red bounding box is displayed around them indicating that they are not maintainting social distance. 
+With no doubt, the COVID-19 pandemic has put the world to a halt. The world we lived in a few months prior is completely different than what it is now. The virus is spreading quickly and is a danger to the human race. Seeing the necessity of the hour one must always take certain precautions of which one being social distancing. Maintaining social distancing during COVID-19 is a must to ensure a slowdown in the growth rate of new cases. Our manuscript focuses on detecting if the people around are maintaining social distancing or not. Using our own self developed model named SocialdistancingNet-19 for detecting the frame of a person and displaying labels, they are marked as safe or unsafe if the distance is less than a certain value. This system can be used for monitoring people via video surveillance in CCTV. 
 <br />
 <br />
 
@@ -11,7 +9,7 @@ Webcam is used to capture the video and detect people in real-time. If people ar
 
 ## Set Up
 
-To begin with, use the requirements.txt file to install the dependencies.
+Use the requirements.txt file to install the needed packages.
 ```
 pip install -r requirements.txt
 ```
@@ -25,11 +23,12 @@ python social_distance_detection.py --prototxt SSD_MobileNet_prototxt.txt --mode
 
 ## Model
 
-The MobileNet SSD model can detect 20 objects. The list of objects that can be detected can be found in the [class_labels.txt](class_labels.txt) file.
-You can also load any pre-trained model from Deep Learning frameworks like Caffe, Tensorflow, Torch and Darknet. 
+The MobileNet SSD model can detect 20 objects. The objects that can be detected can be found in the [class_labels.txt](class_labels.txt) file.
+Pre-trained model from Deep Learning frameworks like Caffe, Tensorflow, Torch and Darknet can also be loaded.
 
 
 ## Method
+SSD is designed for object detection in real-time. Faster R-CNN uses a region proposal network to create boundary boxes and utilizes those boxes to classify objects. While it is considered the start-of-the-art in accuracy, the whole process runs at 7 frames per second. Far below what a real-time processing needs. SSD speeds up the process by eliminating the need of the region proposal network. To recover the drop in accuracy, SSD applies a few improvements including multi-scale features and default boxes. These improvements allow SSD to match the Faster R-CNN’s accuracy using lower resolution images, which further pushes the speed higher. 
 
 Single Shot object Detection (SSD) using MobileNet and OpenCV were used to detect people. A bounding box is displayed around every person detected. 
 
@@ -53,8 +52,3 @@ We have the x, y and z (distance of the person from camera) coordinates for ever
 * Video can be calibrated to get bird's eye view for more accurate distance estimation between objects.
 
 
-## References
-
-[DNN_Object_Detection](https://github.com/TheNsBhasin/DNN_Object_Detection)
-
-[Find distance from camera to object/marker using Python and OpenCV](https://www.pyimagesearch.com/2015/01/19/find-distance-camera-objectmarker-using-python-opencv/)
