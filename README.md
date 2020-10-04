@@ -6,7 +6,7 @@ Webcam is used to capture the video and detect people in real-time. If people ar
 <br />
 <br />
 
-![](demo.gif)
+
 
 
 ## Set Up
